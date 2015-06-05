@@ -7,7 +7,9 @@
 
 services:
     kreta_comment.repository.comment:
-        factory_service: doctrine.orm.entity_manager
-        factory_method: getRepository
         class: %kreta_comment.repository_comment.class%
-        arguments: [%kreta_comment.comment.class%]
+        factory: 
+            - @doctrine.orm.entity_manager
+            - getRepository
+        arguments: 
+            - %kreta_comment.comment.class%

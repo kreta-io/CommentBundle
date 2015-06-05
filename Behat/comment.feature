@@ -85,6 +85,7 @@ Feature: Manage comment
   Scenario: Getting all the comments of issue 0
     Given I am authenticating with "access-token-0" token
     When I send a GET request to "/app_test.php/api/issues/0/comments"
+    And print response
     Then the response code should be 200
     And the response should contain json:
     """
