@@ -13,11 +13,11 @@ Feature: Manage comment
 
   Background:
     Given the following users exist:
-      | id | firstName | lastName | email           | password | createdAt  |
-      | 0  | Kreta     | User     | user@kreta.com  | 123456   | 2014-10-20 |
-      | 1  | Kreta     | User2    | user2@kreta.com | 123456   | 2014-10-20 |
-      | 2  | Kreta     | User3    | user3@kreta.com | 123456   | 2014-10-20 |
-      | 3  | Kreta     | User4    | user4@kreta.com | 123456   | 2014-10-20 |
+      | id | firstName | lastName | username | email           | password | createdAt  |
+      | 0  | Kreta     | User     | user     | user@kreta.com  | 123456   | 2014-10-20 |
+      | 1  | Kreta     | User2    | user2    | user2@kreta.com | 123456   | 2014-10-20 |
+      | 2  | Kreta     | User3    | user3    | user3@kreta.com | 123456   | 2014-10-20 |
+      | 3  | Kreta     | User4    | user4    | user4@kreta.com | 123456   | 2014-10-20 |
     And the following workflows exist:
       | id | name       | creator        |
       | 0  | Workflow 1 | user@kreta.com |
@@ -89,155 +89,177 @@ Feature: Manage comment
     Then the response code should be 200
     And the response should contain json:
     """
-      [{
-        "id": "7", 
-        "created_at": "2015-01-02T00:00:00+0100",
-        "description": "The description 8",
-        "updated_at": "2015-01-24T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User3",
-          "photo": {
+      [
+        {
+          "id": "7",
+          "created_at": "2015-01-02T00:00:00+0100",
+          "description": "The description 8",
+          "updated_at": "2015-01-24T00:00:00+0100",
+          "written_by": {
+            "username": "user3",
+            "first_name": "Kreta",
+            "last_name": "User3",
+            "photo": {
               "id": "3",
               "name": "http://localhost/app_test.php/media/image/user-3.jpg"
             }
-        },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
-          }
-        }
-      }, {
-        "id": "3",
-        "created_at": "2015-01-09T00:00:00+0100",
-        "description": "The description 4",
-        "updated_at": "2015-02-21T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User"
-        },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
-          },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
-          }
-        }
-      }, {
-        "id": "8",
-        "created_at": "2015-01-09T00:00:00+0100",
-        "description": "The description 9",
-        "updated_at": "2015-02-18T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User4"
-        },
-        "_links": {
-          "issue": {
+          "_links": {
+            "issue": {
               "href": "http://localhost/app_test.php/api/issues/0"
-          },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
-        }
-      }, {
-        "id": "0",
-        "created_at": "2015-01-10T00:00:00+0100",
-        "description": "The description 1",
-        "updated_at": "2015-03-01T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User"
         },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
+        {
+          "id": "3",
+          "created_at": "2015-01-09T00:00:00+0100",
+          "description": "The description 4",
+          "updated_at": "2015-02-21T00:00:00+0100",
+          "written_by": {
+            "username": "user",
+            "first_name": "Kreta",
+            "last_name": "User",
+            "photo": null
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
-        }
-      }, {
-        "id": "4",
-        "created_at": "2015-01-20T00:00:00+0100",
-        "description": "The description 5",
-        "updated_at": "2015-01-30T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User"
         },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
+        {
+          "id": "8",
+          "created_at": "2015-01-09T00:00:00+0100",
+          "description": "The description 9",
+          "updated_at": "2015-02-18T00:00:00+0100",
+          "written_by": {
+            "username": "user4",
+            "first_name": "Kreta",
+            "last_name": "User4",
+            "photo": null
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
-        }
-      }, {
-        "id": "2",
-        "created_at": "2015-01-31T00:00:00+0100",
-        "description": "The description 3",
-        "updated_at": "2015-02-01T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User"
         },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
+        {
+          "id": "0",
+          "created_at": "2015-01-10T00:00:00+0100",
+          "description": "The description 1",
+          "updated_at": "2015-03-01T00:00:00+0100",
+          "written_by": {
+            "username": "user",
+            "first_name": "Kreta",
+            "last_name": "User",
+            "photo": null
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
-        }
-      }, {
-        "id": "9",
-        "created_at": "2015-02-07T00:00:00+0100",
-        "description": "The description 10",
-        "updated_at": "2015-02-18T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User3",
-          "photo": {
+        },
+        {
+          "id": "4",
+          "created_at": "2015-01-20T00:00:00+0100",
+          "description": "The description 5",
+          "updated_at": "2015-01-30T00:00:00+0100",
+          "written_by": {
+            "username": "user",
+            "first_name": "Kreta",
+            "last_name": "User",
+            "photo": null
+          },
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "created_at": "2015-01-31T00:00:00+0100",
+          "description": "The description 3",
+          "updated_at": "2015-02-01T00:00:00+0100",
+          "written_by": {
+            "username": "user",
+            "first_name": "Kreta",
+            "last_name": "User",
+            "photo": null
+          },
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
+          }
+        },
+        {
+          "id": "9",
+          "created_at": "2015-02-07T00:00:00+0100",
+          "description": "The description 10",
+          "updated_at": "2015-02-18T00:00:00+0100",
+          "written_by": {
+            "username": "user3",
+            "first_name": "Kreta",
+            "last_name": "User3",
+            "photo": {
               "id": "3",
               "name": "http://localhost/app_test.php/media/image/user-3.jpg"
             }
-        },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
-        }
-      }, {
-        "id": "5",
-        "created_at": "2015-02-09T00:00:00+0100",
-        "description": "The description 6",
-        "updated_at": "2015-02-10T00:00:00+0100",
-        "written_by": {
-          "first_name": "Kreta",
-          "last_name": "User2",
-          "photo": {
+        },
+        {
+          "id": "5",
+          "created_at": "2015-02-09T00:00:00+0100",
+          "description": "The description 6",
+          "updated_at": "2015-02-10T00:00:00+0100",
+          "written_by": {
+            "username": "user2",
+            "first_name": "Kreta",
+            "last_name": "User2",
+            "photo": {
               "id": "2",
               "name": "http://localhost/app_test.php/media/image/user-2.jpg"
             }
-        },
-        "_links": {
-          "issue": {
-            "href": "http://localhost/app_test.php/api/issues/0"
           },
-          "comments": {
-            "href": "http://localhost/app_test.php/api/issues/0/comments"
+          "_links": {
+            "issue": {
+              "href": "http://localhost/app_test.php/api/issues/0"
+            },
+            "comments": {
+              "href": "http://localhost/app_test.php/api/issues/0/comments"
+            }
           }
         }
-      }]
+      ]
     """
 
   Scenario: Getting all the comments of issue 0 that the writer is user@kreta.com
@@ -252,8 +274,10 @@ Feature: Manage comment
         "description":"The description 4",
         "updated_at":"2015-02-21T00:00:00+0100",
         "written_by":{
-          "first_name":"Kreta",
-          "last_name":"User"
+          "username": "user",
+          "first_name": "Kreta",
+          "last_name": "User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -269,8 +293,10 @@ Feature: Manage comment
         "description":"The description 1",
         "updated_at":"2015-03-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -286,8 +312,10 @@ Feature: Manage comment
         "description":"The description 5",
         "updated_at":"2015-01-30T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -303,8 +331,10 @@ Feature: Manage comment
         "description":"The description 3",
         "updated_at":"2015-02-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -329,8 +359,10 @@ Feature: Manage comment
         "description":"The description 1",
         "updated_at":"2015-03-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -346,8 +378,10 @@ Feature: Manage comment
         "description":"The description 5",
         "updated_at":"2015-01-30T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -363,8 +397,10 @@ Feature: Manage comment
         "description":"The description 3",
         "updated_at":"2015-02-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -380,6 +416,7 @@ Feature: Manage comment
         "description":"The description 10",
         "updated_at":"2015-02-18T00:00:00+0100",
         "written_by":{
+          "username": "user3",
           "first_name":"Kreta",
           "last_name":"User3",
           "photo": {
@@ -401,6 +438,7 @@ Feature: Manage comment
         "description":"The description 6",
         "updated_at":"2015-02-10T00:00:00+0100",
         "written_by":{
+          "username": "user2",
           "first_name":"Kreta",
           "last_name":"User2",
           "photo": {
@@ -431,6 +469,7 @@ Feature: Manage comment
         "description":"The description 8",
         "updated_at":"2015-01-24T00:00:00+0100",
         "written_by":{
+          "username": "user3",
           "first_name":"Kreta",
           "last_name":"User3",
           "photo": {
@@ -452,8 +491,10 @@ Feature: Manage comment
         "description":"The description 4",
         "updated_at":"2015-02-21T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -478,8 +519,10 @@ Feature: Manage comment
         "description":"The description 9",
         "updated_at":"2015-02-18T00:00:00+0100",
         "written_by":{
+          "username": "user4",
           "first_name":"Kreta",
-          "last_name":"User4"
+          "last_name":"User4",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -495,8 +538,10 @@ Feature: Manage comment
         "description":"The description 1",
         "updated_at":"2015-03-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -512,8 +557,10 @@ Feature: Manage comment
         "description":"The description 5",
         "updated_at":"2015-01-30T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -529,8 +576,10 @@ Feature: Manage comment
         "description":"The description 3",
         "updated_at":"2015-02-01T00:00:00+0100",
         "written_by":{
+          "username": "user",
           "first_name":"Kreta",
-          "last_name":"User"
+          "last_name":"User",
+          "photo": null
         },
         "_links":{
           "issue":{
@@ -546,6 +595,7 @@ Feature: Manage comment
         "description":"The description 10",
         "updated_at":"2015-02-18T00:00:00+0100",
         "written_by":{
+          "username": "user3",
           "first_name":"Kreta",
           "last_name":"User3",
           "photo": {
@@ -567,6 +617,7 @@ Feature: Manage comment
         "description":"The description 6",
         "updated_at":"2015-02-10T00:00:00+0100",
         "written_by":{
+          "username": "user2",
           "first_name":"Kreta",
           "last_name":"User2",
           "photo": {
