@@ -4,11 +4,11 @@
 [![Build Status](https://travis-ci.org/kreta-plugins/CommentBundle.svg?branch=master)](https://travis-ci.org/kreta-plugins/CommentBundle)
 [![Coverage Status](https://img.shields.io/coveralls/kreta-plugins/CommentBundle.svg)](https://coveralls.io/r/kreta-plugins/CommentBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kreta-plugins/CommentBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kreta-plugins/CommentBundle/?branch=master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/kreta-plugins/comment-bundle.svg)](http://hhvm.h4cc.de/package/kreta-plugins/comment-bundle)
-[![Total Downloads](https://poser.pugx.org/kreta-plugins/comment-bundle/downloads)](https://packagist.org/packages/kreta-plugins/comment-bundle)
+[![HHVM Status](http://hhvm.h4cc.de/badge/kreta/comment-bundle.svg)](http://hhvm.h4cc.de/package/kreta/comment-bundle)
+[![Total Downloads](https://poser.pugx.org/kreta/comment-bundle/downloads)](https://packagist.org/packages/kreta/comment-bundle)
 
-[![Latest Stable Version](https://poser.pugx.org/kreta-plugins/comment-bundle/v/stable.svg)](https://packagist.org/packages/kreta-plugins/comment-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/kreta-plugins/comment-bundle/v/unstable.svg)](https://packagist.org/packages/kreta-plugins/comment-bundle)
+[![Latest Stable Version](https://poser.pugx.org/kreta/comment-bundle/v/stable.svg)](https://packagist.org/packages/kreta/comment-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/kreta/comment-bundle/v/unstable.svg)](https://packagist.org/packages/kreta/comment-bundle)
 
 Tests
 -----
@@ -56,4 +56,4 @@ Kreta Comment Bundle is created by:
 
 Licensing Options
 -----------------
-[![License](https://poser.pugx.org/kreta-plugins/comment-bundle/license.svg)](https://github.com/kreta/kreta/blob/master/LICENSE)
+[![License](https://poser.pugx.org/kreta/comment-bundle/license.svg)](https://github.com/kreta/kreta/blob/master/LICENSE)
