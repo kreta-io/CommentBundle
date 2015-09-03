@@ -1,6 +1,6 @@
 {
     "name": "kreta/comment-bundle",
-    "description": "Kreta core bundle",
+    "description": "Kreta comment bundle",
     "keywords": ["project", "manager", "development", "tool", "comment", "bundle"],
     "homepage": "http://kreta.io",
     "license": "MIT",
