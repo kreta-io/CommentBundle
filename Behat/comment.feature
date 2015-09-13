@@ -84,8 +84,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments of issue 0
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments"
-    And print response
+    When I send a GET request to "/api/issues/0/comments"
     Then the response code should be 200
     And the response should contain json:
     """
@@ -101,15 +100,15 @@ Feature: Manage comment
             "last_name": "User3",
             "photo": {
               "id": "3",
-              "name": "http://localhost/app_test.php/media/image/user-3.jpg"
+              "name": "http://kreta.test:8000/media/image/user-3.jpg"
             }
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -126,10 +125,10 @@ Feature: Manage comment
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -146,10 +145,10 @@ Feature: Manage comment
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -166,10 +165,10 @@ Feature: Manage comment
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -186,10 +185,10 @@ Feature: Manage comment
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -206,10 +205,10 @@ Feature: Manage comment
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -224,15 +223,15 @@ Feature: Manage comment
             "last_name": "User3",
             "photo": {
               "id": "3",
-              "name": "http://localhost/app_test.php/media/image/user-3.jpg"
+              "name": "http://kreta.test:8000/media/image/user-3.jpg"
             }
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         },
@@ -247,15 +246,15 @@ Feature: Manage comment
             "last_name": "User2",
             "photo": {
               "id": "2",
-              "name": "http://localhost/app_test.php/media/image/user-2.jpg"
+              "name": "http://kreta.test:8000/media/image/user-2.jpg"
             }
           },
           "_links": {
             "issue": {
-              "href": "http://localhost/app_test.php/api/issues/0"
+              "href": "http://kreta.test:8000/api/issues/0"
             },
             "comments": {
-              "href": "http://localhost/app_test.php/api/issues/0/comments"
+              "href": "http://kreta.test:8000/api/issues/0/comments"
             }
           }
         }
@@ -264,7 +263,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments of issue 0 that the writer is user@kreta.com
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments?owner=user@kreta.com"
+    When I send a GET request to "/api/issues/0/comments?owner=user@kreta.com"
     Then the response code should be 200
     And the response should contain json:
     """
@@ -281,10 +280,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -300,10 +299,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -319,10 +318,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -338,10 +337,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }]
@@ -349,7 +348,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments of issue 0 from 2015-01-10
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments?createdAt=2015-01-10"
+    When I send a GET request to "/api/issues/0/comments?createdAt=2015-01-10"
     Then the response code should be 200
     And the response should contain json:
     """
@@ -366,10 +365,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -385,10 +384,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -404,10 +403,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -421,15 +420,15 @@ Feature: Manage comment
           "last_name":"User3",
           "photo": {
               "id": "3",
-              "name": "http://localhost/app_test.php/media/image/user-3.jpg"
+              "name": "http://kreta.test:8000/media/image/user-3.jpg"
             }
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -443,15 +442,15 @@ Feature: Manage comment
           "last_name":"User2",
           "photo": {
               "id": "2",
-              "name": "http://localhost/app_test.php/media/image/user-2.jpg"
+              "name": "http://kreta.test:8000/media/image/user-2.jpg"
             }
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }]
@@ -459,7 +458,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments issue 0 with limit 2
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments?limit=2"
+    When I send a GET request to "/api/issues/0/comments?limit=2"
     Then the response code should be 200
     And the response should contain json:
     """
@@ -474,15 +473,15 @@ Feature: Manage comment
           "last_name":"User3",
           "photo": {
               "id": "3",
-              "name": "http://localhost/app_test.php/media/image/user-3.jpg"
+              "name": "http://kreta.test:8000/media/image/user-3.jpg"
             }
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -498,10 +497,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }]
@@ -509,7 +508,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments issue 0 with offset 2
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments?offset=2"
+    When I send a GET request to "/api/issues/0/comments?offset=2"
     Then the response code should be 200
     And the response should contain json:
     """
@@ -526,10 +525,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -545,10 +544,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -564,10 +563,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -583,10 +582,10 @@ Feature: Manage comment
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -600,15 +599,15 @@ Feature: Manage comment
           "last_name":"User3",
           "photo": {
               "id": "3",
-              "name": "http://localhost/app_test.php/media/image/user-3.jpg"
+              "name": "http://kreta.test:8000/media/image/user-3.jpg"
             }
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }, {
@@ -622,15 +621,15 @@ Feature: Manage comment
           "last_name":"User2",
           "photo": {
               "id": "2",
-              "name": "http://localhost/app_test.php/media/image/user-2.jpg"
+              "name": "http://kreta.test:8000/media/image/user-2.jpg"
             }
         },
         "_links":{
           "issue":{
-            "href":"http://localhost/app_test.php/api/issues/0"
+            "href":"http://kreta.test:8000/api/issues/0"
           },
           "comments":{
-            "href":"http://localhost/app_test.php/api/issues/0/comments"
+            "href":"http://kreta.test:8000/api/issues/0/comments"
           }
         }
       }]
@@ -638,7 +637,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments of issue 0 with user which is not a project participant
     Given I am authenticating with "access-token-3" token
-    When I send a GET request to "/app_test.php/api/issues/0/comments"
+    When I send a GET request to "/api/issues/0/comments"
     Then the response code should be 403
     And the response should contain json:
     """
@@ -649,7 +648,7 @@ Feature: Manage comment
 
   Scenario: Getting all the comments of issue unknown issue
     Given I am authenticating with "access-token-0" token
-    When I send a GET request to "/app_test.php/api/issues/unknown-issue/comments"
+    When I send a GET request to "/api/issues/unknown-issue/comments"
     Then the response code should be 404
     And the response should contain json:
     """
@@ -661,7 +660,7 @@ Feature: Manage comment
   Scenario: Creating a comment
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a POST request to "/app_test.php/api/issues/0/comments" with body:
+    When I send a POST request to "/api/issues/0/comments" with body:
     """
       {
         "description": "The comment description"
@@ -672,7 +671,7 @@ Feature: Manage comment
   Scenario: Creating a comment without description
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a POST request to "/app_test.php/api/issues/0/comments" with body:
+    When I send a POST request to "/api/issues/0/comments" with body:
     """
       {
         "description": ""
@@ -691,7 +690,7 @@ Feature: Manage comment
   Scenario: Creating a comment of issue 0 with user which is not a project participant
     Given I am authenticating with "access-token-3" token
     Given I set header "content-type" with value "application/json"
-    When I send a POST request to "/app_test.php/api/issues/0/comments" with body:
+    When I send a POST request to "/api/issues/0/comments" with body:
     """
       {
         "description": "The comment description"
@@ -708,7 +707,7 @@ Feature: Manage comment
   Scenario: Creating a comment of issue unknown issue
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a POST request to "/app_test.php/api/issues/unknown-issue/comments" with body:
+    When I send a POST request to "/api/issues/unknown-issue/comments" with body:
     """
       {
         "description": "The comment description"
@@ -725,7 +724,7 @@ Feature: Manage comment
   Scenario: Updating the 0 comment
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a PUT request to "/app_test.php/api/issues/0/comments/0" with body:
+    When I send a PUT request to "/api/issues/0/comments/0" with body:
     """
       {
         "description": "The updated comment description"
@@ -736,7 +735,7 @@ Feature: Manage comment
   Scenario: Updating the 0 comment without description
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a PUT request to "/app_test.php/api/issues/0/comments/0" with body:
+    When I send a PUT request to "/api/issues/0/comments/0" with body:
     """
       {
         "description": ""
@@ -755,7 +754,7 @@ Feature: Manage comment
   Scenario: Updating the 0 comment of issue 0 with user which is not a project participant
     Given I am authenticating with "access-token-3" token
     Given I set header "content-type" with value "application/json"
-    When I send a PUT request to "/app_test.php/api/issues/0/comments/0" with body:
+    When I send a PUT request to "/api/issues/0/comments/0" with body:
     """
       {
         "description": "The comment description"
@@ -772,7 +771,7 @@ Feature: Manage comment
   Scenario: Updating the 0 comment of issue unknown issue
     Given I am authenticating with "access-token-0" token
     Given I set header "content-type" with value "application/json"
-    When I send a PUT request to "/app_test.php/api/issues/unknown-issue/comments/0" with body:
+    When I send a PUT request to "/api/issues/unknown-issue/comments/0" with body:
     """
       {
         "description": "The comment description"
