@@ -41,14 +41,6 @@ Feature: Manage comment
       | 3  | Blocker | Test project 1 |
       | 4  | Low     | Test project 2 |
       | 5  | Medium  | Test project 2 |
-    And the following issue types exist:
-      | id | name        | project        |
-      | 0  | Bug         | Test project 1 |
-      | 1  | Epic        | Test project 1 |
-      | 2  | New feature | Test project 1 |
-      | 3  | Bug         | Test project 1 |
-      | 4  | Error       | Test project 1 |
-      | 5  | Story       | Test project 1 |
     And the following medias exist:
       | id | name       | createdAt  | updatedAt | resource        |
       | 2  | user-2.jpg | 2014-10-30 | null      | user2@kreta.com |
@@ -60,9 +52,9 @@ Feature: Manage comment
       | Test project 2 | user2@kreta.com | ROLE_PARTICIPANT |
       | Test project 2 | user4@kreta.com | ROLE_PARTICIPANT |
     And the following issues exist:
-      | id | numericId | project        | title        | description | reporter       | assignee       | type | status   | priority | createdAt  |
-      | 0  | 1         | Test project 1 | Test issue 1 | Description | user@kreta.com | user@kreta.com | 4    | Open     | 1        | 2014-12-15 |
-      | 1  | 2         | Test project 1 | Test issue 2 | Description | user@kreta.com | user@kreta.com | 2    | Resolved | 1        | 2014-11-07 |
+      | id | numericId | project        | title        | description | reporter       | assignee       | status   | priority | createdAt  |
+      | 0  | 1         | Test project 1 | Test issue 1 | Description | user@kreta.com | user@kreta.com | Open     | 1        | 2014-12-15 |
+      | 1  | 2         | Test project 1 | Test issue 2 | Description | user@kreta.com | user@kreta.com | Resolved | 1        | 2014-11-07 |
     And the following comments exist:
       | id | description        | user            | issue        | createdAt  | updatedAt  |
       | 0  | The description 1  | user@kreta.com  | Test issue 1 | 2015-01-10 | 2015-03-01 |
