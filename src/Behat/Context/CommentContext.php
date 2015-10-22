@@ -14,6 +14,8 @@ namespace Kreta\Bundle\CommentBundle\Behat\Context;
 
 use Behat\Gherkin\Node\TableNode;
 use Kreta\Bundle\CoreBundle\Behat\Context\DefaultContext;
+use Kreta\Component\Comment\Model\Comment;
+use Kreta\Component\Comment\Model\CommentId;
 
 /**
  * Comment Behat context class.
@@ -36,13 +38,12 @@ final class CommentContext extends DefaultContext
             $issue = $this->get('kreta_issue.repository.issue')->findOneBy(['title' => $commentData['issue']], false);
             $user = $this->get('kreta_user.repository.user')->findOneBy(['email' => $commentData['user']], false);
 
-            $comment = $this->get('kreta_comment.factory.comment')->create($issue, $user);
-            $comment->setDescription($commentData['description']);
-            if (isset($commentData['updatedAt'])) {
-                $this->setField($comment, 'updatedAt', new \DateTime($commentData['updatedAt']));
+            $comment = Comment::publish(new CommentId(), $commentData['content'], $user, $issue);
+            if (isset($commentData['updatedOn'])) {
+                $this->setField($comment, 'updatedOn', new \DateTime($commentData['updatedOn']));
             }
-            if (isset($commentData['createdAt'])) {
-                $this->setField($comment, 'createdAt', new \DateTime($commentData['createdAt']));
+            if (isset($commentData['createdOn'])) {
+                $this->setField($comment, 'createdOn', new \DateTime($commentData['createdOn']));
             }
             if (isset($commentData['id'])) {
                 $this->setId($comment, $commentData['id']);

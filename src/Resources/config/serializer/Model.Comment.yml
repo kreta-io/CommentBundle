@@ -14,7 +14,7 @@ Kreta\Component\Comment\Model\Comment:
             href:
                 route: get_issue
                 parameters:
-                    issueId: expr(object.getIssue().getId())
+                    issueId: expr(object.issue().getId())
                 absolute: true
             exclusion:
                 groups: [commentList, comment]
@@ -23,7 +23,7 @@ Kreta\Component\Comment\Model\Comment:
             href:
                 route: get_issues_comments
                 parameters:
-                    issueId: expr(object.getIssue().getId())
+                    issueId: expr(object.issue().getId())
                 absolute: true
             exclusion:
                 groups: [commentList, comment]
@@ -31,18 +31,18 @@ Kreta\Component\Comment\Model\Comment:
         id:
             expose: true
             groups: [commentList, comment]
-        createdAt:
+        author:
             expose: true
             groups: [commentList, comment]
-        description:
+        content:
             expose: true
             groups: [commentList, comment]
-        updatedAt:
+        createdOn:
             expose: true
             groups: [commentList, comment]
         issue:
             expose: true
             groups: []
-        writtenBy:
+        updatedOn:
             expose: true
             groups: [commentList, comment]

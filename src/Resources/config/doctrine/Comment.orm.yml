@@ -16,24 +16,23 @@ Kreta\Component\Comment\Model\Comment:
             generator:
                 strategy: UUID
     fields:
-        createdAt:
-            column: created_at
-            type: datetime
-        description:
+        content:
             type: text
-        updatedAt:
-            column: updated_at
+        createdOn:
+            column: created_on
             type: datetime
-            nullable: true
+        updatedOn:
+            column: updated_on
+            type: datetime
     manyToOne:
+        author:
+            targetEntity: Kreta\Component\User\Model\Interfaces\UserInterface
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
         issue:
             targetEntity: Kreta\Component\Issue\Model\Interfaces\IssueInterface
             joinColumn:
                 name: issue_id
                 referencedColumnName: id
                 onDelete: CASCADE
-        writtenBy:
-            targetEntity: Kreta\Component\User\Model\Interfaces\UserInterface
-            joinColumn:
-                name: user_id
-                referencedColumnName: id

@@ -18,7 +18,7 @@ services:
         class: %kreta_comment.form_type.comment.class%
         arguments:
             - %kreta_comment.comment.class%
-            - @kreta_comment.factory.comment
+            - null
             - @security.token_storage
         tags:
             - { name: form.type, alias: 'kreta_comment_comment_type' }

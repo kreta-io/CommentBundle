@@ -8,5 +8,5 @@
 
 Kreta\Component\Comment\Model\Comment:
     properties:
-        description:
+        content:
             - NotBlank: ~

@@ -35,8 +35,8 @@ class CommentController extends Controller
      * @param string                                    $issueId      The issue id
      * @param \FOS\RestBundle\Request\ParamFetcher      $paramFetcher The param fetcher
      *
-     * @QueryParam(name="owner", requirements="(.*)", strict=true, nullable=true, description="Owner's email filter")
-     * @QueryParam(name="createdAt", requirements="(.*)", strict=true, nullable=true, description="Created at filter")
+     * @QueryParam(name="author", requirements="(.*)", strict=true, nullable=true, description="Author's email filter")
+     * @QueryParam(name="createdOn", requirements="(.*)", strict=true, nullable=true, description="Created at filter")
      * @QueryParam(name="limit", requirements="\d+", default="9999", description="Amount of comments to be returned")
      * @QueryParam(name="offset", requirements="\d+", default="0", description="Offset in pages")
      *
@@ -50,8 +50,8 @@ class CommentController extends Controller
     {
         return $this->get('kreta_comment.repository.comment')->findByIssue(
             $request->get('issue'),
-            $paramFetcher->get('createdAt') ? new \DateTime($paramFetcher->get('createdAt')) : null,
-            $paramFetcher->get('owner'),
+            $paramFetcher->get('createdOn') ? new \DateTime($paramFetcher->get('createdOn')) : null,
+            $paramFetcher->get('author'),
             $paramFetcher->get('limit'),
             $paramFetcher->get('offset')
         );
