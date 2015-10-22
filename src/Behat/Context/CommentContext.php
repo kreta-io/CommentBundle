@@ -1,12 +1,13 @@
 <?php
 
 /*
- * This file belongs to Kreta.
- * The source code of application includes a LICENSE file
- * with all information about license.
+ * This file is part of the Kreta package.
  *
- * @author benatespina <benatespina@gmail.com>
- * @author gorkalaucirica <gorka.lauzirika@gmail.com>
+ * (c) Beñat Espiña <benatespina@gmail.com>
+ * (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Kreta\Bundle\CommentBundle\Behat\Context;
@@ -15,18 +16,17 @@ use Behat\Gherkin\Node\TableNode;
 use Kreta\Bundle\CoreBundle\Behat\Context\DefaultContext;
 
 /**
- * Class CommentContext.
+ * Comment Behat context class.
  *
- * @package Kreta\Bundle\CommentBundle\Behat\Context
+ * @author Beñat Espiña <benatespina@gmail.com>
+ * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  */
-class CommentContext extends DefaultContext
+final class CommentContext extends DefaultContext
 {
     /**
      * Populates the database with comments.
      *
      * @param \Behat\Gherkin\Node\TableNode $comments The comments
-     *
-     * @return void
      *
      * @Given /^the following comments exist:$/
      */

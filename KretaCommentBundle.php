@@ -14,9 +14,10 @@ namespace Kreta\Bundle\CommentBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class KretaCommentBundle.
+ * Comment bundle kernel class.
  *
- * @package Kreta\CommentBundle
+ * @author Beñat Espiña <benatespina@gmail.com>
+ * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  */
 class KretaCommentBundle extends Bundle
 {

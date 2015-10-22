@@ -6,6 +6,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
-composer.lock
-composer.phar
-vendor
+services:
+    kreta_comment.factory.comment:
+        class: %kreta_comment.factory_comment.class%
+        arguments: [%kreta_comment.comment.class%]
