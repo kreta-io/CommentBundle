@@ -46,6 +46,6 @@
         "psr-4": { "Kreta\\Bundle\\CommentBundle\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Kreta\\Bundle\\CommentBundle\\spec\\": "spec/" }
+        "psr-4": { "spec\\Kreta\\Bundle\\CommentBundle": "spec/" }
     }
 }
