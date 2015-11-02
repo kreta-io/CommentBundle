@@ -44,7 +44,7 @@ Kreta comment bundle is created by:
 **@gorkalaucirica** - [gorka.lauzirika@gmail.com](mailto:gorka.lauzirika@gmail.com)
 
 ##Licensing Options
-[![License](https://poser.pugx.org/kreta/fixtures-bundle/license.svg)](https://github.com/kreta-plugins/CommentBundle/blob/master/LICENSE)
+[![License](https://poser.pugx.org/kreta/comment-bundle/license.svg)](https://github.com/kreta-plugins/CommentBundle/blob/master/LICENSE)
 
 [1]: http://www.phpspec.net/
 [2]: http://symfony.com/doc/current/contributing/code/index.html
