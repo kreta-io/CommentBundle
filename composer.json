@@ -1,7 +1,14 @@
 {
     "name": "kreta/comment-bundle",
     "description": "Kreta comment bundle",
-    "keywords": ["project", "manager", "development", "tool", "comment", "bundle"],
+    "keywords": [
+        "project",
+        "manager",
+        "development",
+        "tool",
+        "comment",
+        "bundle"
+    ],
     "homepage": "http://kreta.io",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -18,15 +25,14 @@
         }
     ],
     "require": {
-        "php":                      ">=5.4",
-
-        "kreta/core-bundle":        "^0.3.0",
-        "kreta/comment":            "^0.3.0"
+        "php":                    ">=5.4",
+        "kreta/core-bundle":      "^0.4.0",
+        "kreta/comment":          "^0.4.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer":      "^1.10",
-        "mmoreram/php-formatter":   "^1.0",
-        "phpspec/phpspec":          "^2.3"
+        "fabpot/php-cs-fixer":    "^1.10",
+        "mmoreram/php-formatter": "^1.0",
+        "phpspec/phpspec":        "^2.3"
     },
     "repositories": [
         {
@@ -43,9 +49,13 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Kreta\\Bundle\\CommentBundle\\": "src/" }
+        "psr-4": {
+            "Kreta\\Bundle\\CommentBundle\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "spec\\Kreta\\Bundle\\CommentBundle": "spec/" }
+        "psr-4": {
+            "spec\\Kreta\\Bundle\\CommentBundle\\": "spec/"
+        }
     }
 }
