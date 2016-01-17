@@ -54,8 +54,7 @@ class CommentControllerSpec extends ObjectBehavior
         ParamFetcher $paramFetcher,
         IssueInterface $issue,
         CommentInterface $comment
-    )
-    {
+    ) {
         $container->get('kreta_comment.repository.comment')->shouldBeCalled()->willReturn($commentRepository);
         $request->get('issue')->shouldBeCalled()->willReturn($issue);
         $paramFetcher->get('createdAt')->shouldBeCalled()->willReturn('2014-10-20');
@@ -76,8 +75,7 @@ class CommentControllerSpec extends ObjectBehavior
         Request $request,
         IssueInterface $issue,
         CommentInterface $comment
-    )
-    {
+    ) {
         $container->get('kreta_comment.form_handler.comment')->shouldBeCalled()->willReturn($handler);
         $request->get('issue')->shouldBeCalled()->willReturn($issue);
         $handler->processForm($request, null, ['issue' => $issue])->shouldBeCalled()->willReturn($comment);
@@ -95,8 +93,7 @@ class CommentControllerSpec extends ObjectBehavior
         TokenInterface $token,
         UserInterface $user,
         Request $request
-    )
-    {
+    ) {
         $container->get('kreta_comment.repository.comment')->shouldBeCalled()->willReturn($commentRepository);
 
         $container->has('security.token_storage')->shouldBeCalled()->willReturn(true);

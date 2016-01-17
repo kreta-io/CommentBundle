@@ -13,7 +13,6 @@
 namespace spec\Kreta\Bundle\CommentBundle\DependencyInjection;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 /**
  * Spec of Configuration class.
