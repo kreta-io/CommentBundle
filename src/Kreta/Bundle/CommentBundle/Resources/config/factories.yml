@@ -8,5 +8,6 @@
 
 services:
     kreta_comment.factory.comment:
-        class: %kreta_comment.factory_comment.class%
-        arguments: [%kreta_comment.comment.class%]
+        class: '%kreta_comment.factory_comment.class%'
+        arguments:
+            - '%kreta_comment.comment.class%'

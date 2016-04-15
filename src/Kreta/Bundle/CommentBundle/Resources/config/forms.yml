@@ -15,9 +15,9 @@ services:
 
 #### TYPES ####
     kreta_comment.form_type.comment:
-        class: %kreta_comment.form_type.comment.class%
+        class: '%kreta_comment.form_type.comment.class%'
         arguments:
-            - %kreta_comment.comment.class%
+            - '%kreta_comment.comment.class%'
             - '@kreta_comment.factory.comment'
             - '@security.token_storage'
         tags:

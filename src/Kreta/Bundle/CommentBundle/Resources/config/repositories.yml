@@ -8,9 +8,9 @@
 
 services:
     kreta_comment.repository.comment:
-        class: %kreta_comment.repository_comment.class%
+        class: '%kreta_comment.repository_comment.class%'
         factory:
             - '@doctrine.orm.entity_manager'
             - getRepository
         arguments:
-            - %kreta_comment.comment.class%
+            - '%kreta_comment.comment.class%'
